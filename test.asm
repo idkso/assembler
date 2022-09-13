@@ -1,0 +1,10 @@
+movi ax, 0xe40
+
+inc ax
+int 0x10
+jmp -3
+
+hlt
+
+.repeat 0x0000 249
+.word 0xaa55
