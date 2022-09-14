@@ -78,6 +78,9 @@ pub fn codegen(
                     }
                     index += 1;
                 },
+                .byte => {
+                    try writer.writeIntLittle(u8, @intCast(u8, idk[index].value.integer));
+                },
             }
             index += 1;
         } else if (started and state == .instruction and idk[index].typ != .instruction) {

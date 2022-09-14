@@ -128,10 +128,12 @@ pub const Value = union(Type) {
 pub const Macro = enum(u8) {
     word,
     repeat,
+    byte,
 
     const map = std.ComptimeStringMap(Macro, .{
         .{ "word", .word },
         .{ "repeat", .repeat },
+        .{ "byte", .byte },
     });
 
     pub fn check(str: []const u8) bool {
